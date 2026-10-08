@@ -1,0 +1,7 @@
+/build/
+/build-*/
+/dist/
+*.log
+CMakeUserPresets.json
+*.user
+*.user.*
