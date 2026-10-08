@@ -137,3 +137,15 @@
 - 新版PID43300响应正常，启动标准错误为空；统计页实际视觉复核由用户在窗口验收。旧经验数据只记录含手填基数的总数，没有逐日来源，本次不根据工资历史反推扣减经验；后续自动经验已按假期规则停算。
 
 文档维护信息：2026-10-08 16:42（Asia/Singapore，UTC+8）；记录国庆旧历史迁移、存量数据保护和实际验证结果。
+
+## 2026-10-08 18:03：源码推送与v0.1.0发布
+
+- 用户授权推送并发布。确认GitHub登录账号871099，当前工程原无Git仓库；未收到其他仓库/公开范围选择，按已说明的私有仓库方案创建 `https://github.com/871099/NiumaTimer`。
+- 本地初始化main，仓库级配置GitHub noreply作者，保留源码、原创素材来源、UML与回归检查；忽略build、dist和本机日志。初始源码提交 `3c6e5bd818e4456a391c7a4a49c33181ca9ee2fe`，对应annotated标签v0.1.0。
+- Qt6.8.3/MSVC2022 x64 Release构建59/59成功。windeployqt部署未改写的动态库/QML插件；包附VC x64运行库安装程序、Qt许可证、60份第三方声明及构建信息。移除开发Qt搜索路径后启动，PID11528响应正常，15个Qt模块来自下载包目录，标准错误为空。
+- 下载包 `NiumaTimer-0.1.0-windows-x64.zip` 为58,623,064字节，1504个ZIP条目；解压EXE哈希与已启动包一致，未含用户历史、日志、编译缓存和调试符号。SHA256为 `16d5db84b1f454866aa259d39f53a7641dd3f9f67b33728d70d3a88e56fc37b0`。
+- 首次Git传输因直连被重置/连接失败；读取现有Windows代理127.0.0.1:7897并通过本次命令的代理参数完成推送，未修改全局代理设置。远程main/tag提交与本机核对一致。
+- Release已发布：`https://github.com/871099/NiumaTimer/releases/tag/v0.1.0`，非草稿；ZIP与SHA256SUMS.txt两份附件上传完成，GitHub返回的附件SHA256均与本机一致。
+- 验证证据保存在忽略的 `build-release/release-startup-verification.json`、`release-archive-verification.json`、`release-publication-verification.json`。其他电脑及Android实机尚未验收，本次仅发布Windows x64版本。
+
+文档维护信息：2026-10-08 18:03（Asia/Singapore，UTC+8）；记录Git初始化、Windows Release打包、远程源码与附件校验以及实际发布结果。

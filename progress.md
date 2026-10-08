@@ -4,11 +4,13 @@
 
 ## 当前阶段
 
-已完成 Windows Debug 和 Release 构建；已有共享导航、首页、任务、统计、工资/排班、成就、换装和关于页。2026-10-08 法定假期停班/补班和旧历史修正已完成，现准备发布v0.1.0 Windows x64便携包。工程位于 `K:\dev\Game\worker-timer-v2`；旧原型 `K:\dev\Game\worker-timer` 保留，不作为本工程代码基础。
+已完成 Windows Debug 和 Release 构建；已有共享导航、首页、任务、统计、工资/排班、成就、换装和关于页。2026-10-08 法定假期停班/补班和旧历史修正已完成，v0.1.0 Windows x64便携包已发布至 `https://github.com/871099/NiumaTimer/releases/tag/v0.1.0`。工程位于 `K:\dev\Game\worker-timer-v2`；旧原型 `K:\dev\Game\worker-timer` 保留，不作为本工程代码基础。
 
 产品范围以用户提供的完整跨平台产品图和已确认的 `docs/04-product-implementation-plan.md` 为准。原文“独立页面尚未实现、方案待确认”与当前代码及用户确认冲突，已修正。页面代码已存在，不能将构建/启动成功视为全部视觉和交互完成验收。
 
 ## 已完成
+
+- 源码已推送至私有GitHub仓库 `871099/NiumaTimer` 的main分支，发布标签v0.1.0对应源码提交 `3c6e5bd`；Release包含Windows x64下载包和SHA256SUMS.txt。
 
 - 修正旧版国庆误结算迁移：历史仓库备份原文件、归档原班次并清零假期工作记录，保留任务和外观；展示/统计/写入入口统一拦截假期班次。实际本机6条已修正，非假期2条保留。
 
@@ -43,6 +45,8 @@
 
 ## 验证记录
 
+- 2026-10-08：远程main与v0.1.0标签已核对；ZIP为58,623,064字节，解压后EXE与启动验证的包内EXE哈希一致，未混入用户history.json、日志、编译缓存或调试符号。GitHub Release非草稿，两份附件均已上传，服务端SHA256均与本机一致；证据为 `build-release/release-archive-verification.json` 与 `release-publication-verification.json`。
+
 - 2026-10-08：Qt6.8.3/MSVC2022 x64 Release构建59/59成功；包内附Qt动态库/QML插件、MSVC运行库安装程序、Qt许可证与60份源模块第三方声明。移除开发Qt搜索路径后从包目录启动，PID11528响应正常，15个Qt模块全部来自包目录，标准错误为空；证据为 `build-release/release-startup-verification.json`。
 
 - 2026-10-08：历史迁移回归和日历回归2/2通过；Qt6.8.3/MSVC x64 Debug 44/44构建成功。本机迁移6条国庆班次，假期工时/金额清零且不再结算，9月29日/30日保留，任务2→2，外观保留，备份SHA256与原文件一致。新版PID43300响应正常且标准错误为空；实际统计页视觉复核待用户验收，证据为 `build-msvc/history-migration-verification.json`。
@@ -66,10 +70,12 @@
 
 1. 人工验收假期详情打开/关闭、调休列表和窄屏换行；国务院新年度通知公布后更新年历资源。
 2. 完成已有页面的保存回读、任务维护、历史统计、成就/外观，以及置顶、大小周和网络校时交互验收；按产品图继续检查视觉效果。
-3. 完成v0.1.0源码推送、下载包上传和Release发布；其他电脑部署待独立验收。
+3. v0.1.0已发布；其他电脑部署待独立验收。
 4. 安装匹配 Qt 版本的 Android Kit、JDK、SDK/NDK，生成 APK 并在手机上验收竖屏、触控及前后台恢复。
 
 ## 最近进展（事实）
+
+- 2026-10-08：初始化Git仓库并发布v0.1.0；源码、原创素材、UML和回归检查均已推送，Windows Release程序、动态依赖、许可资料及校验文件可在私有仓库Releases下载。
 
 - 2026-10-08：补齐上一轮遗漏的旧历史迁移，国庆6条误结算已撤销，统计不再包含其工资和工时；新版窗口PID43300已重新打开。
 
